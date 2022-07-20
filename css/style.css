@@ -1,5 +1,6 @@
 body{
     font-family: TKT bold;
+    min-width: 360px;
 }
 a{
     text-decoration: none;
@@ -49,12 +50,28 @@ header{
     align-items: center;
     padding: 0 5px;
 }
+@media only screen and (max-width:500px){
+    .user-icons{
+        width: 30px;
+        height: 30px;
+        
+    }
+    .user-menu{
+        width: 120px;
+    }
+    .logo{
+        width: 130px;
+    }
+}
 /* end top header */
 .bottom-header{
     height: 60px;
     border-top: 1px solid  #FAFAFB;
     border-bottom: 1px solid  #FAFAFB;
     padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .bottom-header a{
     color: #696974;
@@ -63,12 +80,27 @@ header{
     transition: 0.3s ease;
     font-family: TKT;
     font-weight: bold;
+
 }
 .bottom-header a:hover{
     color: rgb(121, 228, 121);
 }
 #active-a{
     color: rgb(121, 228, 121);
+}
+@media only screen and (max-width:990px){
+    
+    .bottom-header{
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .bottom-header-nav-left{
+        margin-top: 20px;
+    }
+    .bottom-header-nav-right{
+        margin: 10px 0;
+    }
 }
 /* end header bottom */ /* end header */
 
@@ -77,6 +109,7 @@ header{
     padding: 0 40px;
     background-color: #FAFAFB;
     padding-top: 30px;
+    margin: 20px 0;
 }
 .img-div{
     height: 180px;
@@ -295,6 +328,19 @@ h1{
     outline: none;
     background-color: transparent;
 }
+#btn-div{
+    width: 80px;
+    height: 30px;
+    background-color: #99CC66;
+    color: #fff;
+    float: right;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 .filter h2{
     font-weight: bold;
     font-size: 16px;
@@ -357,23 +403,27 @@ h1{
     margin-left: 40px;
     padding:  20px;
 }
+.domens{
+    border-bottom: 1px solid #ccc;
+    border-radius: 10px;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+.domens:hover{
+    background-color: #ccc;
+    
+}
 .domens-box{
     padding: 30px 30px;
-    border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px;
-    transition: 0.2s ease;
-}
-.domens-box:hover{
-    background-color: #ccc;
+
 }
 
 .domens-box i{
     width: 45px;
     height: 45px;
-    border: 1px solid #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -381,13 +431,43 @@ h1{
     background-color: rgb(238, 232, 232);
     cursor: pointer;
 }
+.fa-chevron-down{
+    border: 1px solid #ccc;
+}
 .domens-box-left{
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .domens-box-right{
     display: flex;
     align-items: center;
+}
+.showme-price{
+    height: 45px;
+    border-radius: 5px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-left: 10px;
+    
+}
+
+.showme-price h2{
+    font-size: 16px;
+    margin: 0;
+    margin-left: 10px;
+}
+.showme-price .fa-check{
+    font-size: 13px;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #99CC66;
+    
 }
 .domens-box-left span{
     margin-left: 20px;
@@ -413,108 +493,150 @@ h1{
 .domens-box-right .fa-cart-shopping{
     background-color: #99CC66;
     color: #fff;
-    margin-left: 20px;
 }
-
-/* test */
-.box{
-    width: 400px;
-    height: 400px;
-    border: 1px solid black;
-    margin: 0 auto;
-    position: relative;
-}
-.circle{
-    width: 30px;
-    height: 30px;
-    background-color: green;
-    border-radius: 50%;
-    /* position: absolute; */
-    
-}
-
-.box{
-    width: 600px;
-    height: 200px;
-    border: 1px solid black;
-    margin: 0 auto;
-    margin: 100px 0;
-    text-align:center ;
-    padding: 50px 0;
-}
-#slider{
-    -webkit-appearance: none;
-    width: 199px;
-    height: 6px;
-    border-radius: 20px;
-    background-color: transparent;
-    /* border: 1px solid #696974; */
-    
-
-}
-#slider::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    width: 25px;
-    height: 25px;
-    background-color: red;
-    cursor: pointer;
-    border-radius: 50%;
-    z-index: 10;
-}
-.selectBtn{
-    width: 0;
-    height: 7px;
-    background-color: #696974;
-    margin: 0 auto;
-    border-radius: 20px;
-    position: absolute;
-    left: 200px;
-    top: 61px;
-    z-index: -1;
-}
-.boxer{
-    width: 200px;
-    height: 7px;
-    border:1px solid #ccc;
-    position: absolute;
-    left: 200px;
-    top: 61px;
-    z-index: -1;
-    border-radius: 20px;
-}
-
-.wraper{
-    width: 700px;
-    height: 500px;
-    border: 2px solid black;
-    margin: 0 auto;
-    display: flex;
-}
-.tester{
-    width: 40px;
-    height: 40px;
-    background-color: orange;
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#sr{
-    width: 150px;
-    height: 35px;
-    display: block;
-    visibility: visible;
-}
-#btn-div{
-    width:80px;
-    height: 30px;
-    background-color:#99CC66;
-    color: #fff;
-    float: right;
-    cursor: pointer;
-    margin: 30px 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.domen-info{
+    width: 80%;
+    height: 110px;
+    background-color: #fff;
     border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: none;
+
 }
+.domens-info-boxs-parent{
+    display: flex;
+    justify-content: space-between;
+}
+.domen-info-box{
+    padding: 20px;
+    width: 33%;
+    text-align: center;
+}
+
+.domen-info-box h2{
+    font-size: 16px;
+}
+.domen-info-box span{
+    width: 100%;
+    display: block;
+}
+.active{
+    display: block;
+}
+.active-icon{
+    border: 1px solid #99CC66;
+    color: #99CC66;
+
+}
+.showme{
+    width: 115px;
+    height: 45px;
+    border: 1px solid #ccc;
+    color: #696974;
+    background-color: #fff;
+}
+@media only screen and (max-width:990px){
+    .filter-and-domens{
+        margin-top: 50px;
+    }
+    .domen-market,.how-sale-domen,.sort{
+        width: 100%;
+    }
+    .domen-market{
+        height: 0;
+        padding: 30px 0;
+    }
+    .how-sale-domen{
+        margin: 20px 0;
+    }
+    .md-title{
+        height: 50px;
+        text-align: center;
+        margin-bottom: 120px;
+    }
+    .domens-body{
+        margin: 20px 0 0 0;
+    }
+}
+
+@media only screen and (max-width:520px) {
+    .domens-body{
+        padding: 20px 10px;
+    }
+    .title{
+        padding: 20px;
+    }
+    .title h1{
+        font-size: 15px;
+        text-align: center;
+    }
+    .sort{
+        display: none;
+    }
+    .domen-market{
+        display: none;
+    }
+    .bottom-header-nav-left a{
+       font-size: 12px;
+    }
+    .md-title{
+        margin: 0;
+    }
+    .how-sale-domen{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .user-icons img{
+        width: 20px;
+    }
+    .bottom-header-nav-right{
+        display: none;
+    }
+    .domen-info-box{
+        padding: 10px;
+        padding-top: 20px;
+    }
+    .domens-box-left i,.domens-box-right i{
+       width: 30px;
+       height: 30px;
+       border-radius: 10px;
+    }
+    .domens-box-left span,.domens-box-right span:first-child{
+        font-size: 15px;
+        margin-left: 5px;
+    }
+    .domens-box{
+        padding: 20px 0;
+    }
+    .body-section{
+        padding: 10px;
+    }
+    .domen-info-box span{
+        font-size: 13px;
+    }
+    .domen-info-box:last-child span{
+        display: none;
+    }
+    .domen-info-box h2{
+        font-size: 12px;
+    }
+    .showme{
+        width: 100px;
+        height: 30px;
+        margin: 0 10px;
+    }
+    .fa.fa-check{
+        font-size: 14px;
+        width: 15px;
+        height: 15px;
+    }
+    .showme h2{
+        font-size: 14px;
+    }
+    
+    
+}
+
+
