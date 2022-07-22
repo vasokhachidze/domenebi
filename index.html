@@ -81,12 +81,20 @@
                    <form action="index.html">
                        <input type="text" name="" id="name-seacrh" placeholder="სახელით ძიება">
                        <label for="price">ფასი</label>
-                       <div id="price-start"><input type="text" name="price" placeholder="50"><img src="image/lari.svg" alt="lari-image"></div>
-                       <div id="price-end"><input type="text" name="price" placeholder="50 000"><img src="image/lari.svg" alt="lari-image"></div>
-                       <div class="first-range"><span></span> <span></span></div>
+                       <div id="price-start"><input type="number" name="price" class="price inp-min" min="0" max="50000" value="50"><img src="image/lari.svg" alt="lari-image"></div>
+                       <div id="price-end"><input type="number" name="price" class="price" min="0" max="50000" value="50000"><img src="image/lari.svg" alt="lari-image"></div>
+                       <div class="ranges-div">
+                          <div class="price-range-box">
+                            <input type="range" class="min-input"  min="0" max="50000" value="50" step="100">
+                            <span></span>
+                            <input type="range"  min="0" max="50000" value="50000" step="100">
+                            <span></span>
+                            <div class="progre-ss"></div>
+                          </div>
+                       </div>
                        <label for="simbol">სიმბოლოების რაოდენობა</label>
-                       <div class="start-simbol"> <input type="text" name="simbol" id="simbol" placeholder="0"></div>
-                       <div class="end-simbol"><input type="text" name="simbol" id="simbol" placeholder="26"></div>
+                       <div class="start-simbol"> <input type="text"  name="simbol"  id="simbol" placeholder="0"></div>
+                       <div class="end-simbol"><input type="text" name="simbol"  id="simbol" placeholder="26"></div>
                        <div class="first-range"><span></span><span></span></div>
                        <div id="btn-div"><span>ძებნა</span></div> 
                        <ul>
@@ -1059,12 +1067,7 @@
             </div>
         </div>
     </section>
-
-
-
     <!-- end body section -->
-
-
-
+    
 </body>
 </html>

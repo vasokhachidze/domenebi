@@ -9,7 +9,8 @@ a{
 /* start header */
 header{
     min-width: 300px;
-
+    max-width: 1285px;
+    margin: 0 auto;
 }
 /* start top header */
 .top-header{
@@ -106,10 +107,13 @@ header{
 
 /* start body-section */
 .body-section{
+    max-width: 1285px;
+    margin: 0 auto;
     padding: 0 40px;
     background-color: #FAFAFB;
     padding-top: 30px;
-    margin: 20px 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .img-div{
     height: 180px;
@@ -174,7 +178,7 @@ h1{
     border: 1px solid #ccc;
     text-align: center;
 }
-.filter input:first-child{
+.filter input{
     width: 100%;
     height: 45px;
     padding-left: 10px;
@@ -227,78 +231,71 @@ h1{
     top: 13px;
     
 }
-.first-range{
+.ranges-div{
     width: 100%;
-    height: 2px;
-    background-color: #99CC66;
-    margin-top: 80px;
-    border-radius: 20px;
+    height: 5px;
     position: relative;
+    margin-top: 80px;
 }
-.first-range span:first-child{
-    width: 25px;
-    height: 25px;
-    border: 2px solid #99CC66;
-    border-radius: 50%;
+.price-range-box input{
     position: absolute;
+    width: 110%;
+    height: 5px;
+    top: 0;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #fff;
-    cursor: pointer;
+    padding: 0;
+
 }
-.first-range span:last-child{
-    width: 25px;
-    height: 25px;
-    border: 2px solid #99CC66;
+.price-range-box input{
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    
+}
+.price-range-box{
+    width: 100%;
+    height: 5px;
+    background-color: #ddd;
+    position: absolute;
+    border-radius: 5px;
+}
+input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
     background-color: #fff;
+    pointer-events: auto;
     cursor: pointer;
-}
-.first-range span:first-child::before{
-    content: "";
-    width: 2px;
-    height: 11px;
     background-color: #99CC66;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 6px;
 }
-.first-range span:first-child::after{
-    content: "";
-    width: 2px;
-    height: 11px;
+input[type="range"]::-webkit-range-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: auto;
+    cursor: pointer;
     background-color: #99CC66;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 6px;
 }
-.first-range span:last-child::before{
-    content: "";
-    width: 2px;
-    height: 11px;
+.progre-ss{
+    height: 5px;
+    position: absolute;
     background-color: #99CC66;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 6px;
+    left: 5%;
+    right: 0;
+    pointer-events: none;
+    border-radius: 5px;
 }
-.first-range span:last-child::after{
-    content: "";
-    width: 2px;
-    height: 11px;
-    background-color: #99CC66;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 6px;
-}
+
+
+
 
 .filter .start-simbol,.end-simbol{
     width: 45%;
@@ -639,4 +636,56 @@ h1{
     
 }
 
-
+/* progress price */
+.price-slider{
+    width: 100%;
+    height: 100vh;
+    background-color: #99CC66;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper{
+    width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 25px 40px;
+    position: relative;
+}
+.header h2{
+    font-size: 24px;
+    font-weight: 600;
+}
+.header p {
+    margin-top: 5px;
+    font-size: 16px;
+}
+.price-input{
+    width: 100%;
+    display: flex;
+    margin: 30px 0 35px;
+  
+}
+.price-input .field{
+    height: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+}
+.field input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 19px;
+    text-align: center;
+    margin-left: 12px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    -moz-appearance: textfield;
+    
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}

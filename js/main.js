@@ -37,9 +37,56 @@ for(let checkbox of checkBoxes){
         
     })
 }
-for(chec in checkBoxes){
-    console.log(chec);
-}
+
+
+const priceRange = document.querySelectorAll('.price-range-box input');
+const priceInput = document.querySelectorAll('.price');
+const progress = document.querySelector('.progre-ss')
+const masks = document.querySelectorAll('.price-range-box span')
+let priceDif = 10000;
+
+
+priceInput.forEach(input =>{
+    input.addEventListener('input',(e)=>{
+        // show me two inputs value
+        let minVal = parseInt(priceInput[0].value);
+        maxVal = parseInt(priceInput[1].value);
+                
+
+        if((maxVal - minVal >= priceDif) && (maxVal <= 49999) && (minVal > 0) ){
+            if(e.target.classList.contains('inp-min')){ //if input is active 
+                priceRange[0].value = minVal;
+                progress.style.left = (minVal / priceRange[0].max) * 100 + '%';
+
+            }else{
+                priceRange[1].value = minVal;
+                progress.style.right = 100 - (maxVal / priceRange[1].max) * 100 + '%';
+            }
+        }
+
+    })
+})
+priceRange.forEach(input =>{
+    input.addEventListener('input',(e)=>{
+        // show me two ranges value
+        let minVal = parseInt(priceRange[0].value);
+        maxVal = parseInt(priceRange[1].value);
+        if(maxVal - minVal < priceDif){
+            if(e.target.className === 'min-input'){
+                priceRange[0].value = maxVal - priceDif;
+
+            }else{
+                priceRange[1].value = minVal + priceDif;
+            }
+        }else{
+            priceInput[0].value = priceRange[0].value;
+            priceInput[1].value = priceRange[1].value;
+            progress.style.left = (minVal / priceRange[0].max) * 100 + '%';
+            progress.style.right = 100 - (maxVal / priceRange[1].max) * 100 + '%';
+        }
+
+    })
+})
 
 
 // listener 
@@ -100,6 +147,9 @@ sBtn.addEventListener('click',(e)=>{
 
 
 
+
+
+
 showMeDomenInfo();
 
 function showMeDomenInfo(){
@@ -142,4 +192,6 @@ function showMeDomenInfo(){
     
 }
 
-// firstP.setAttribute("id","firstPracPara");
+
+
+
